@@ -3,6 +3,8 @@ import {ContentTypeMiddleware} from "./middlewares/ContentTypeMiddleware";
 import {WrapMiddleware} from "./middlewares/WrapMiddleware";
 import {Products} from "./nodes/Product";
 
+export {IProduct} from "./nodes/Product"
+
 export class Api extends Service {
     private static instances: { [key: string]: Api } = {};
 
