@@ -23,7 +23,7 @@ export class Api extends Service {
     // tslint:disable-next-line
     console.log("process.env", process.env);
     if (process.env.NODE_ENV === "development") {
-      return "http://localhost:30000"; //tslint:disable-line
+      return "https://services.bchurunway.com";//tslint:disable-line
     }
     if (process.env.NODE_ENV === "production") {
       return "https://services.bchurunway.com";//tslint:disable-line
