@@ -19,7 +19,7 @@ export class Api extends Service {
     return new Client(request);
   }
 
-  public static getEndpoint(): string {
+  public static getEndpoint(): any {
     // tslint:disable-next-line
     console.log("process.env", process.env);
     if (process.env.NODE_ENV === "development") {

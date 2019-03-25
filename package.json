@@ -1,0 +1,53 @@
+{
+  "name": "madame-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/Api.js",
+  "types": "lib/Api.d.ts",
+  "dependencies": {
+    "@crazyfactory/tinka": "^1.8.2",
+    "@types/jest": "^24.0.11",
+    "autobind-decorator": "^2.4.0",
+    "jest": "^24.5.0",
+    "ts-jest": "^24.0.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.4000",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "tsc && npm version patch && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madameorganic-dev/sdk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madameorganic-dev/sdk/issues"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "cacheDirectory": "<rootDir>/.jest/cache",
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/coverage",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "./"
+    ]
+  },
+  "homepage": "https://github.com/madameorganic-dev/sdk#readme"
+}
