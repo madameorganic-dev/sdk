@@ -3,7 +3,7 @@ import {ContentTypeMiddleware} from "./middlewares/ContentTypeMiddleware";
 import {WrapMiddleware} from "./middlewares/WrapMiddleware";
 import {Products} from "./nodes/Product";
 
-export {IProduct} from "./nodes/Product"
+export {IProduct} from "./nodes/Product"; // export interfaces
 
 export class Api extends Service {
     private static instances: { [key: string]: Api } = {};
@@ -22,20 +22,17 @@ export class Api extends Service {
 
     public static getEndpoint(): any {
         // tslint:disable-next-line
-        console.log("process.env", process.env);
         if (process.env.NODE_ENV === "development") {
             return "http://localhost:7777"; //tslint:disable-line
         }
         if (process.env.NODE_ENV === "production") {
             return "https://services.bchurunway.com";//tslint:disable-line
         }
-        alert("NODE_ENV NOT SET");
     }
 
-    public get getProducts(): Products {
+    public get products(): Products {
         return new Products(this.client);
     }
-
 
     private static setupMiddlewares(client: Client): Client {
         client.addMiddleware(new WrapMiddleware());
