@@ -9,7 +9,7 @@ export interface IProduct {
 
 export class Products extends Service {
     @autobind
-    public getData(): Promise<IProduct> {
+    public getData(): Promise<IProduct[]> {
         const request: IFetchRequest = {
             url: `/products`
         };
