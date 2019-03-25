@@ -3,8 +3,10 @@ import {ContentTypeMiddleware} from "./middlewares/ContentTypeMiddleware";
 import {WrapMiddleware} from "./middlewares/WrapMiddleware";
 import {Products} from "./nodes/Product";
 
+// tslint:disable-next-line
 export {IProduct} from "./nodes/Product"; // export interfaces
 
+// tslint:disable-next-line
 export class Api extends Service {
     private static instances: { [key: string]: Api } = {};
 

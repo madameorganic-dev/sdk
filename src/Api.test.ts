@@ -1,22 +1,16 @@
 import {Api} from "./Api";
 
-describe("API", function() {
-    it("should run without constructor", function() {
-        expect(
-            new Api()
-        ).not.toThrow;
-    });
-
-    it("should create an Instance", function() {
+describe("API", () => {
+    it("should create an Instance", () => {
         const api = Api.getInstance();
         expect(api).toBeDefined();
     });
 
-    it("should return correct URL for Development and production", function() {
+    it("should return correct URL for Development and production", () => {
         const arr = [
             {
                 env: "development",
-                expected: "http://localhost:7777"
+                expected: "http://localhost:7777" // tslint:disable-line
             },
             {
                 env: "production",
@@ -30,7 +24,7 @@ describe("API", function() {
         });
     });
 
-    it("should have a get method for products", function() {
+    it("should have a get method for products", () => {
         const api = Api.getInstance();
         expect(api.products).toBeDefined();
     });
