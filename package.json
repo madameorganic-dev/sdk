@@ -1,6 +1,6 @@
 {
   "name": "madame-sdk",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "lib/Api.js",
   "types": "lib/Api.d.ts",
