@@ -28,7 +28,7 @@ export class Products extends Service {
         const request: IFetchRequest = {
             body: JSON.stringify(options),
             method: "POST",
-            url: `/products`
+            url: `http://localhost:7777/products` //tslint:disable-line
         };
         return this.client.process(request);
     }
