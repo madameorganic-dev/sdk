@@ -18,7 +18,7 @@ export class Products extends Service {
     @autobind
     public getData(): Promise<IProduct[]> {
         const request: IFetchRequest = {
-            url: `http://localhost:7777/products` //tslint:disable-line
+            url: `/products`
         };
         return this.client.process(request);
     }
