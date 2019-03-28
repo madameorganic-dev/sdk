@@ -2,9 +2,11 @@ import {Client, IFetchRequest, Service} from "@crazyfactory/tinka";
 import {ContentTypeMiddleware} from "./middlewares/ContentTypeMiddleware";
 import {WrapMiddleware} from "./middlewares/WrapMiddleware";
 import {Products} from "./nodes/Product";
+import {Stock} from "./nodes/Stock";
 
 // tslint:disable-next-line
 export {IProduct} from "./nodes/Product"; // export interfaces
+export {IStock} from "./nodes/Stock";
 
 // tslint:disable-next-line
 export class Api extends Service {
@@ -34,6 +36,10 @@ export class Api extends Service {
 
     public get products(): Products {
         return new Products(this.client);
+    }
+
+    public get stock(): Stock {
+        return new Stock(this.client);
     }
 
     private static setupMiddlewares(client: Client): Client {
