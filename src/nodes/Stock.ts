@@ -26,4 +26,14 @@ export class Stock extends Service {
         return this.client.process(request);
     }
 
+    @autobind
+    public create(options: IStock): Promise<IStock> {
+        const request: IFetchRequest = {
+            body: JSON.stringify(options),
+            method: "POST",
+            url: `/stock`
+        };
+        return this.client.process(request);
+    }
+
 }
