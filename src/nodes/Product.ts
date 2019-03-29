@@ -2,6 +2,7 @@ import {IFetchRequest, Service} from "@crazyfactory/tinka";
 import autobind from "autobind-decorator";
 
 export interface IProduct {
+    _id: string;
     name: string;
     productId: string;
     description: string;
@@ -19,6 +20,14 @@ export class Products extends Service {
     public getData(): Promise<IProduct[]> {
         const request: IFetchRequest = {
             url: `/products`
+        };
+        return this.client.process(request);
+    }
+
+    @autobind
+    public getById(id: string): Promise<IProduct> {
+        const request: IFetchRequest = {
+            url: `/products/${id}`
         };
         return this.client.process(request);
     }
